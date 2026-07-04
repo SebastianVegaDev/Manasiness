@@ -1,0 +1,203 @@
+.movement-register-form {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    border: var(--mana-border);
+    height: 100%;
+    max-height: 86vh;
+    position: relative;
+    overflow-y: auto;
+    background-color: var(--mana-paper);
+    box-shadow: var(--mana-shadow);
+}
+
+.movement-register-form-heading {
+    border: var(--mana-border);
+    background-color: var(--mana-sand);
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    box-shadow: var(--mana-shadow-sm);
+}
+
+.movement-register-form-heading > span {
+    width: fit-content;
+    border: var(--mana-border-soft);
+    background-color: var(--mana-blue-soft);
+    color: var(--mana-blue-dark);
+    padding: 5px 11px;
+    font-family: "Oswald";
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.movement-register-form-heading > h2 {
+    margin: 0;
+    color: var(--mana-blue);
+    font-family: "Sekuya";
+    font-size: 34px;
+    line-height: 1;
+    text-shadow: 2px 3px 0 rgba(68, 116, 157, 0.16);
+}
+
+.movement-register-form-heading > p {
+    margin: 0;
+    color: var(--mana-ink);
+    font-family: "Oswald";
+    font-size: 17px;
+    line-height: 1.35;
+}
+
+.movement-register-form-title > h4 {
+    font-family: "Oswald";
+    font-size: 20px;
+    color: #44749d;
+}
+
+.movement-register-form-title > h1 {
+    font-family: "Sekuya";
+    font-size: 30px;
+    color: #44749d;
+}
+
+.movement-register-form-helper {
+    border: var(--mana-border);
+    padding: 12px 14px;
+    background-color: var(--mana-blue-soft);
+    color: var(--mana-blue-dark);
+    font-family: "Oswald";
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.movement-register-form-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px 18px;
+}
+
+.movement-register-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.movement-register-form-field > span {
+    color: var(--mana-blue);
+    font-family: "Sekuya";
+    font-size: 20px;
+    line-height: 1;
+}
+
+.movement-register-form-field > input,
+.movement-register-form-field > select,
+.movement-register-form-field > textarea {
+    min-height: 46px;
+    padding: 10px 12px;
+    border: var(--mana-border);
+    background-color: var(--mana-white);
+    color: var(--mana-ink);
+    font-family: "Oswald";
+    font-size: 18px;
+    outline: none;
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.06);
+}
+
+.movement-register-form-field > input:focus,
+.movement-register-form-field > select:focus,
+.movement-register-form-field > textarea:focus {
+    background-color: var(--mana-paper-light);
+    box-shadow: var(--mana-shadow-blue);
+}
+
+.movement-register-form-field > input:disabled,
+.movement-register-form-field > select:disabled,
+.movement-register-form-field > textarea:disabled {
+    background-color: var(--mana-sand);
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+.movement-register-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+    gap: 12px;
+}
+
+.movement-register-form-actions > button {
+    min-width: 132px;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 16px;
+    border: var(--mana-border);
+    cursor: pointer;
+    font-family: "Sekuya";
+    transition:
+        background-color var(--mana-transition),
+        transform 0.1s ease,
+        box-shadow var(--mana-transition);
+    background-color: #4b4b4b;
+    color: white;
+    box-shadow: var(--mana-shadow-sm);
+}
+
+.movement-register-form-actions > button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.movement-register-form-actions > #submit:hover:not(:disabled) {
+    background-color: var(--mana-blue);
+    box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.2);
+}
+
+.movement-register-form-actions > #submit:active:not(:disabled) {
+    transform: scale(0.97);
+    background-color: var(--mana-blue-dark);
+}
+
+.movement-register-form-actions > #cancel:hover:not(:disabled) {
+    background-color: #974545;
+    box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.2);
+}
+
+.movement-register-form-actions > #cancel:active:not(:disabled) {
+    transform: scale(0.97);
+    background-color: #743a3a;
+}
+
+@media (max-width: 760px) {
+    .movement-register-form {
+        padding: 16px;
+        gap: 16px;
+        max-height: none;
+        box-shadow: 4px 4px 0 rgba(17, 17, 17, 0.14);
+    }
+
+    .movement-register-form-heading {
+        padding: 16px;
+    }
+
+    .movement-register-form-heading > h2 {
+        font-size: clamp(28px, 10vw, 34px);
+    }
+
+    .movement-register-form-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .movement-register-form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .movement-register-form-actions > button {
+        width: 100%;
+    }
+}

@@ -3,13 +3,37 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 8px;
+    padding: 4px 16px 0;
 }
 
 .shared-page-title h1 {
     font-family: "Sekuya";
-    color: #44749d;
+    color: var(--mana-blue);
+    font-size: 42px;
+    line-height: 1;
+    text-shadow: 2px 3px 0 rgba(68, 116, 157, 0.18);
 }
 
 .shared-page-title h2  {
     font-family: "Oswald";
+    max-width: 760px;
+    color: var(--mana-ink);
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+@media (max-width: 760px) {
+    .shared-page-title {
+        padding: 0;
+        gap: 6px;
+    }
+
+    .shared-page-title h1 {
+        font-size: clamp(32px, 12vw, 42px);
+    }
+
+    .shared-page-title h2 {
+        font-size: 18px;
+    }
 }

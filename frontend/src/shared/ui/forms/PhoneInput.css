@@ -50,3 +50,13 @@
 .shared-config-content-field .shared-phone-input > input[type="tel"] {
     height: 42px;
 }
+
+@media (max-width: 420px) {
+    .shared-phone-input {
+        flex-direction: column;
+    }
+
+    .shared-phone-input > select {
+        width: 100%;
+    }
+}

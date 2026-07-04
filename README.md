@@ -1,162 +1,222 @@
-# Manasiness
+<div align="center">
+  <img src="frontend/src/assets/images/Logotipo.png" alt="Manasiness" width="180" />
 
-Manasiness is a web application made to help small stores and small business with their daily control.
+  <h1>Manasiness</h1>
 
-The idea is simple: register the movements, see the information more organized, control products stock, and have a better view of income, expenses and pending payments.
+  <p>
+    A full-stack business management dashboard for small stores: catalog, people,
+    sales, purchases, staff payments, pending records, and financial reports.
+  </p>
 
-This project is my first real full stack project, so the main objective is not only make screens, also build a complete flow with frontend, backend, database, authentication and security base.
+  <p>
+    <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+    <img alt="React" src="https://img.shields.io/badge/React-Vite-61DAFB?style=for-the-badge&logo=react&logoColor=111827" />
+    <img alt="Node.js" src="https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white" />
+    <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+    <img alt="Docker" src="https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  </p>
+</div>
+
+<p align="center">
+  <a href="docs/README.md"><strong>Docs</strong></a>
+  &middot;
+  <a href="docs/ARCHITECTURE.md"><strong>Architecture</strong></a>
+  &middot;
+  <a href="docs/FRONTEND.md"><strong>Frontend</strong></a>
+  &middot;
+  <a href="docs/BACKEND.md"><strong>Backend</strong></a>
+  &middot;
+  <a href="docs/DATABASE.md"><strong>Database</strong></a>
+  &middot;
+  <a href="docs/SECURITY.md"><strong>Security</strong></a>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/dashboard.png" alt="Manasiness dashboard home" width="100%" />
+</p>
+
+---
+
+## Product
+
+Manasiness helps a small business keep daily operations organized without turning the app into a heavy ERP. It starts with the base of the store, then connects day-to-day movements and reports around the same data.
+
+<table>
+  <tr>
+    <td width="50%">
+      <strong>Catalog control</strong><br />
+      Categories and products with images, status, prices, stock, and store-scoped data.
+    </td>
+    <td width="50%">
+      <strong>People management</strong><br />
+      Customers, suppliers, workers, and users organized through reusable card and detail screens.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <strong>Daily movements</strong><br />
+      Sales, orders, and staff payments with table history, date windows, sorting, and registration flows.
+    </td>
+    <td width="50%">
+      <strong>Business reports</strong><br />
+      Income, expenses, pending records, activity metrics, and chart-based summaries.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <strong>Secure dashboard</strong><br />
+      Protected routes, httpOnly cookie authentication, JWT validation, bcrypt, CORS, and rate limiting.
+    </td>
+    <td width="50%">
+      <strong>Modular codebase</strong><br />
+      Feature-first frontend and layered backend modules designed to stay readable as the app grows.
+    </td>
+  </tr>
+</table>
+
+## Screenshots
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="docs/screenshots/sales.png" alt="Sales history screen" />
+      <strong>Sales history</strong><br />
+      Daily movement table with sorting, date window controls, pagination, and registration access.
+    </td>
+    <td width="50%">
+      <img src="docs/screenshots/pending.png" alt="Pending payments screen" />
+      <strong>Pending payments</strong><br />
+      Global and scoped pending totals with clear actions to complete open records.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="docs/screenshots/products.png" alt="Products catalog screen" />
+      <strong>Product catalog</strong><br />
+      Search, filters, status, stock, pricing, and quick access to product details.
+    </td>
+    <td width="50%">
+      <img src="docs/screenshots/activity.png" alt="Activity analytics screen" />
+      <strong>Activity analytics</strong><br />
+      Period filters, performance cards, and catalog activity summaries.
+    </td>
+  </tr>
+</table>
 
 ## Stack
 
-### Languages
-- JavaScript
-- SQL
-
-### Frontend
-- React
-- Vite
-- React Router
-- CSS
-
-### Backend
-- Node.js
-- Express
-
-### Database
-- PostgreSQL
-
-### Authentication & Security
-- JWT
-- httpOnly cookies
-- bcrypt
-- CORS
-- Rate limiting
-
-### UI & Feedback
-- Lucide React
-- React Toastify
-- Recharts
-
-### Email
-- Resend
-
-### Development tools
-- ESLint
-- dotenv
-- node --watch
-- DBeaver
-- Postman
-
-## Main features
-
-- Register and login store account
-- Protected dashboard
-- Categories management
-- Products management
-- Customers, suppliers and workers management
-- Sales flow
-- Orders flow
-- Staff payments flow
-- Income, expenses, pending and activity views
-- Store information and password pages
-- Desktop only first version
-- Not found page inside and outside dashboard
-
-## Architecture
-
-Manasiness is separated in frontend and backend. The project is not in one big file because I wanted each part to have their own responsibility.
-
-### Frontend
-
-The frontend is organized by features and shared components.
-
-The pages, api, mappers, configs and feature logic are inside `features`.
-
-The reusable ui, hooks, routes, api client and utils are inside `shared`.
-
-Example:
-
-```txt
-frontend/src/features/products
-frontend/src/shared/ui
-frontend/src/shared/api
+```text
+Frontend   React 19 / Vite 8 / TypeScript / React Router / Recharts / CSS
+Backend    Node.js / Express 5 / TypeScript / PostgreSQL client / JWT
+Database   PostgreSQL 16 / SQL schema files / seed scripts / triggers
+Security   httpOnly cookies / bcrypt / CORS credentials / rate limiting
+Email      Resend
+Infra      Docker Compose / frontend nginx image / PostgreSQL volume
 ```
 
-### Backend
+## Run
 
-The backend follows a layered structure:
-
-```txt
-routes → controllers → services → repositories
-```
-
-The idea is that routes only define the endpoint, controllers handle request and response, services have the business logic, and repositories talk with PostgreSQL.
-
-See more in `docs/ARCHITECTURE.md`.
-
-## Database
-
-The database is made with PostgreSQL and is prepared for multi-store data.
-
-Most important idea: each store has their own categories, products, users and movements using `store_id`.
-
-The schema uses foreign keys, validations, indexes and some triggers for automatic dates.
-
-See more in `docs/DATABASE.md`.
-
-## Security
-
-The first version already has a security base:
-
-- httpOnly cookies for auth
-- JWT authentication
-- Password hashing with bcrypt
-- CORS with credentials
-- Rate limit in sensitive routes
-- Generic error messages
-- Protected backend routes
-
-See more in `docs/SECURITY.md`.
-
-## How to run
-
-### Backend
+<details open>
+<summary><strong>Docker: full app</strong></summary>
 
 ```bash
-cd backend
-npm install
-npm run dev
+cp .env.docker.example .env.docker
+npm run docker:up
 ```
 
-### Frontend
+Open:
+
+```text
+http://localhost:8080
+```
+
+Docker starts PostgreSQL, backend, and frontend. The database schema is mounted from `backend/src/database/schema`.
+
+The demo seed runs automatically in Docker:
+
+```text
+Email: demo@manasiness.dev
+Password: 123456
+```
+
+</details>
+
+<details>
+<summary><strong>Local development</strong></summary>
+
+Install dependencies:
 
 ```bash
-cd frontend
-npm install
-npm run dev
+npm run install:all
 ```
 
-## Environment variables
+Start PostgreSQL, create the backend `.env`, then run schema and seed:
 
-### Backend
-
-```env
-PORT=3000
-DATABASE_URL=your_database_url
-JWT_SECRET=your_secret
-FRONTEND_URL=http://localhost:5173
-NODE_ENV=development
-RESEND_API_KEY=your_resend_key
+```bash
+npm --prefix backend run db:schema
+npm --prefix backend run db:seed
 ```
 
-### Frontend
+Run the apps:
 
-```env
-VITE_API_URL=http://localhost:3000
+```bash
+npm run dev:backend
+npm run dev:frontend
 ```
 
-## Notes
+Default frontend URL:
 
-This project is still growing. The first version is focused on desktop and on having the complete business flow working.
+```text
+http://localhost:5173
+```
 
-Later versions can improve responsive design, roles with permissions, voice assistant and more advanced reports.
+</details>
+
+## Validation
+
+```bash
+npm --prefix backend run typecheck
+npm --prefix backend run build
+npm --prefix frontend run typecheck
+npm --prefix frontend run lint
+npm --prefix frontend run build
+```
+
+## Documentation
+
+| Document | Purpose |
+| --- | --- |
+| [`docs/README.md`](docs/README.md) | Documentation index and reading order |
+| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | System shape and module boundaries |
+| [`docs/FRONTEND.md`](docs/FRONTEND.md) | Frontend folders, routing, cache, and UI rules |
+| [`docs/BACKEND.md`](docs/BACKEND.md) | Backend modules, request flow, auth, and layering |
+| [`docs/DATABASE.md`](docs/DATABASE.md) | PostgreSQL schema and data model |
+| [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md) | Dashboard bootstrap loading and cache |
+| [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md) | Local workflow and seed account |
+| [`docs/SECURITY.md`](docs/SECURITY.md) | Security model and sensitive routes |
+| [`docs/QA_CHECKLIST.md`](docs/QA_CHECKLIST.md) | Manual validation checklist |
+
+## Repository
+
+```text
+backend/
+  src/config/       environment, database, and CORS configuration
+  src/database/     SQL schema, seed data, and database scripts
+  src/modules/      auth, catalog, people, movements, reports, settings
+  src/shared/       validators, mappers, email, constants, transactions
+
+frontend/
+  src/app/          routing, providers, dashboard layout
+  src/features/     product areas grouped by business domain
+  src/shared/       API client, storage, hooks, UI primitives, types
+
+docs/
+  architecture, backend, frontend, database, security, and QA notes
+```
+
+---
+
+<div align="center">
+  <strong>Manasiness</strong><br />
+  Simple management for everyday business.
+</div>

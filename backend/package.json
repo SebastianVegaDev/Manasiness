@@ -5,8 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch server.js",
-    "start": "node server.js"
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "db:schema": "tsx src/database/scripts/runSchema.ts",
+    "db:seed": "tsx src/database/scripts/runSeed.ts"
   },
   "keywords": [],
   "author": "",
@@ -21,5 +25,16 @@
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.20.0",
     "resend": "^6.12.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^26.1.0",
+    "@types/pg": "^8.20.0",
+    "tsx": "^4.22.5",
+    "typescript": "^6.0.3"
   }
 }

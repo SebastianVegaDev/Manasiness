@@ -1,0 +1,186 @@
+/* source: shared/ui/modal/ModalOverlay.css */
+.shared-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    z-index: 1000;
+}
+
+.shared-modal-content {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* source: shared/ui/modal/DrawerPanel.css */
+.shared-drawer-panel-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1000;
+}
+
+.shared-drawer-panel-content {
+    width: 100%;
+    max-width: 720px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mana-blue-soft);
+    border-left: var(--mana-border);
+    box-shadow: -8px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.shared-drawer-banner-slot {
+    margin-top: auto;
+}
+
+/* source: shared/ui/forms/EntityForm.css */
+.shared-entity-form {
+    width: 100%;
+    padding: 30px;
+    border: var(--mana-border);
+    background-color: var(--mana-blue-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-shadow: var(--mana-shadow);
+}
+
+.shared-entity-form-title > h4 {
+    font-family: "Oswald";
+    color: var(--mana-blue-dark);
+}
+
+.shared-entity-form-title > h2 {
+    font-family: "Sekuya";
+    color: var(--mana-blue-dark);
+    line-height: 1;
+}
+
+.shared-entity-form-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+
+.shared-entity-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.shared-entity-form-group > label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.shared-entity-form-group > input,
+.shared-entity-form-group > textarea,
+.shared-entity-form-group > select {
+    min-height: 42px;
+    padding: 9px 11px;
+    border: var(--mana-border);
+    font: inherit;
+    background-color: var(--mana-white);
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.06);
+}
+
+.shared-entity-form-group > textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.shared-entity-form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.shared-entity-form-actions > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 42px;
+    min-width: 118px;
+    padding: 9px 14px;
+    cursor: pointer;
+    font-family: "Sekuya";
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    background-color: #4b4b4b;
+    color: var(--mana-white);
+    border: var(--mana-border);
+    box-shadow: var(--mana-shadow-sm);
+}
+
+.shared-entity-form-actions > #submit:hover {
+    background-color: var(--mana-blue);
+}
+
+.shared-entity-form-actions > #submit:active {
+    transform: scale(0.97);
+    background-color: #304f6b;
+}
+
+.shared-entity-form-actions > #cancel:hover {
+    background-color: #974545;
+}
+
+.shared-entity-form-actions > #cancel:active {
+    transform: scale(0.97);
+    background-color: #743a3a;
+}
+
+
+.shared-form-modal-backdrop { composes: none; }
+.shared-form-modal-body { width: 100%; }
+
+@media (max-width: 760px) {
+    .shared-modal-overlay {
+        padding: 14px;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .shared-modal-content {
+        gap: 16px;
+    }
+
+    .shared-drawer-panel-overlay {
+        justify-content: center;
+    }
+
+    .shared-drawer-panel-content {
+        max-width: none;
+        border-left: 0;
+    }
+
+    .shared-entity-form {
+        padding: 18px;
+        gap: 18px;
+    }
+
+    .shared-entity-form-rows {
+        max-height: none;
+    }
+
+    .shared-entity-form-actions {
+        flex-direction: column;
+    }
+
+    .shared-entity-form-actions > button {
+        width: 100%;
+    }
+}

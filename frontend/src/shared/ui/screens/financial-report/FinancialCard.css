@@ -1,0 +1,44 @@
+.shared-financial-content-cards {
+    display: flex;
+    gap: 22px;
+}
+
+.shared-financial-card {
+    display: flex;
+    flex-direction: column;
+    border: var(--mana-border);
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--mana-sand);
+    box-shadow: var(--mana-shadow-sm);
+    min-height: 132px;
+}
+
+.shared-financial-card-number {
+    font-family: "Sekuya";
+    color: var(--mana-blue);
+    font-size: 34px;
+    line-height: 1;
+}
+
+.shared-financial-card > h3 {
+    font-family: "Oswald";
+    color: var(--mana-blue-dark);
+}
+
+.shared-financial-card > h2, .shared-financial-card > h4{
+    font-family: "Sekuya";
+}
+
+@media (max-width: 760px) {
+    .shared-financial-content-cards {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .shared-financial-card {
+        padding: 16px;
+    }
+}

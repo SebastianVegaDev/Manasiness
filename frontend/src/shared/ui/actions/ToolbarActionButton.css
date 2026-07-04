@@ -1,0 +1,75 @@
+/* source: shared/ui/layouts/card/toolbar/buttons/CardButtonCreate.css */
+.shared-card-button > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 9px 16px;
+    cursor: pointer;
+    font-family: "Sekuya";
+    background-color: var(--mana-blue-mid);
+    color: var(--mana-white);
+    border: var(--mana-border);
+    box-shadow: var(--mana-shadow-sm);
+    transition:
+        background-color var(--mana-transition),
+        transform 0.1s ease,
+        box-shadow var(--mana-transition);
+}
+
+.shared-card-button > button:hover {
+    background-color: var(--mana-blue-dark);
+    box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.2);
+}
+
+.shared-card-button > button:active {
+    transform: scale(0.97);
+}
+
+/* source: shared/ui/layouts/table/toolbar/filter/buttons/TableButtonRegister.css */
+.table-button-register > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 9px 16px;
+    cursor: pointer;
+    font-family: "Sekuya";
+    background-color: var(--mana-blue-mid);
+    color: var(--mana-white);
+    border: var(--mana-border);
+    box-shadow: var(--mana-shadow-sm);
+    transition:
+        background-color var(--mana-transition),
+        transform 0.1s ease,
+        box-shadow var(--mana-transition);
+}
+
+.table-button-register > button:hover {
+    background-color: var(--mana-blue-dark);
+    box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.2);
+}
+
+.table-button-register > button:active {
+    transform: scale(0.97);
+}
+
+
+
+button.table-button-register,
+button.shared-card-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 9px 16px;
+    cursor: pointer;
+    font-family: "Sekuya";
+    background-color: var(--mana-blue-mid);
+    color: var(--mana-white);
+    border: var(--mana-border);
+    box-shadow: var(--mana-shadow-sm);
+}

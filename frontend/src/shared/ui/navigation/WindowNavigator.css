@@ -1,0 +1,106 @@
+/* source: shared/ui/layouts/table/toolbar/window/TableWindow.css */
+.shared-table-window {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: 2px solid black;
+    background-color: #ebe7e0;
+}
+
+.shared-table-window > p {
+    min-width: 120px;
+    text-align: center;
+}
+
+.shared-table-window > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+
+/* source: shared/ui/layouts/financial/toolbar/window/FinancialWindow.css */
+.shared-financial-window {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: 2px solid black;
+    background-color: #ebe7e0;
+}
+
+.shared-financial-window > p{
+    min-width: 120px;
+    text-align: center;
+}
+
+.shared-financial-window > button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+/* source: shared/ui/layouts/person/toolbar/window/PersonHistoryWindow.css */
+.shared-person-history-window {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 10px 14px;
+    border: 2px solid black;
+    background-color: #ebe7e0;
+}
+
+.shared-person-history-window > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.shared-person-history-window > button:hover:enabled {
+    cursor: pointer;
+}
+
+.shared-person-history-window > button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.shared-person-history-window > p {
+    min-width: 150px;
+    text-align: center;
+    font-family: "Oswald";
+    font-size: 18px;
+}
+
+
+/* source: features/activity/layout/content/toolbar/window/ActivityWindow.css */
+.activity-window {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: 2px solid black;
+    background-color: #ebe7e0;
+}
+
+.activity-window > p {
+    min-width: 120px;
+    text-align: center;
+}
+
+.activity-window > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}

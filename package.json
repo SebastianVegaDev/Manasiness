@@ -1,0 +1,28 @@
+{
+    "name": "manasiness",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Business management app for small stores with React, Node.js, Express and PostgreSQL.",
+    "scripts": {
+        "dev:backend": "npm --prefix backend run dev",
+        "dev:frontend": "npm --prefix frontend run dev",
+        "install:backend": "npm --prefix backend install",
+        "install:frontend": "npm --prefix frontend install",
+        "install:all": "npm --prefix backend install && npm --prefix frontend install",
+        "build:frontend": "npm --prefix frontend run build",
+        "lint:frontend": "npm --prefix frontend run lint",
+        "docker:up": "docker compose --env-file .env.docker up --build",
+        "docker:down": "docker compose --env-file .env.docker down",
+        "docker:logs": "docker compose --env-file .env.docker logs -f",
+        "docker:reset": "docker compose --env-file .env.docker down -v"
+    },
+    "keywords": [
+        "react",
+        "node",
+        "express",
+        "postgresql",
+        "business-management"
+    ],
+    "author": "",
+    "license": "ISC"
+}

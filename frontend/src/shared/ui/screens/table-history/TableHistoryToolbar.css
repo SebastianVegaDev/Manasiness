@@ -1,0 +1,166 @@
+/* source: shared/ui/layouts/table/toolbar/TableToolbar.css */
+.shared-table-toolbar {
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: var(--mana-border);
+    background-color: var(--mana-sand);
+    gap: 20px;
+    flex-wrap: wrap;
+    box-shadow: var(--mana-shadow-sm);
+}
+
+
+/* source: shared/ui/layouts/table/toolbar/filter/TableFilter.css */
+.shared-table-filter {
+    border: var(--mana-border);
+    padding: 10px;
+    background-color: var(--mana-paper-light);
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shared-table-filter > legend {
+    padding: 0 6px;
+    margin: 0 auto;
+    font-family: "Sekuya";
+    color: var(--mana-blue);
+}
+
+.shared-table-filter-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 260px;
+    height: 42px;
+    padding: 4px;
+    border: var(--mana-border);
+    background-color: var(--mana-white);
+    overflow: hidden;
+}
+
+.shared-table-filter-switch > input {
+    display: none;
+}
+
+.shared-table-filter-option {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Oswald";
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.shared-table-filter-background {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background-color: var(--mana-blue);
+    z-index: 1;
+    transition: transform 0.25s ease;
+}
+
+#shared-table-filter-recent:checked + .shared-table-filter-option {
+    color: white;
+}
+
+#shared-table-filter-oldest:checked + .shared-table-filter-option {
+    color: white;
+}
+
+#shared-table-filter-recent:checked ~ .shared-table-filter-background {
+    transform: translateX(0);
+}
+
+#shared-table-filter-oldest:checked ~ .shared-table-filter-background {
+    transform: translateX(100%);
+}
+
+/* source: shared/ui/layouts/table/toolbar/window/TableWindow.css */
+.shared-table-window {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: var(--mana-border);
+    background-color: var(--mana-paper-light);
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shared-table-window > p {
+    min-width: 120px;
+    text-align: center;
+}
+
+.shared-table-window > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+
+/* source: shared/ui/layouts/table/toolbar/filter/buttons/TableButtonRegister.css */
+.table-button-register > button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-family: "Sekuya";
+    background-color: var(--mana-blue-mid);
+    color: var(--mana-white);
+    border: var(--mana-border);
+    box-shadow: var(--mana-shadow-sm);
+    transition:
+        background-color var(--mana-transition),
+        transform 0.1s ease,
+        box-shadow var(--mana-transition);
+}
+
+.table-button-register > button:hover {
+    background-color: var(--mana-blue-dark);
+    box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.2);
+}
+
+.table-button-register > button:active {
+    background-color: #d2cbc1;
+    transform: scale(0.97);
+}
+
+@media (max-width: 760px) {
+    .shared-table-toolbar {
+        padding: 12px;
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .shared-table-filter,
+    .shared-table-filter-switch,
+    .shared-table-window,
+    .table-button-register,
+    .table-button-register > button {
+        width: 100%;
+    }
+
+    .shared-table-filter-switch {
+        width: 100%;
+    }
+
+    .shared-table-window > p {
+        flex: 1;
+        min-width: 0;
+    }
+}

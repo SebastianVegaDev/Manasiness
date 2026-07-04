@@ -1,0 +1,115 @@
+.shared-data-table {
+    border: var(--mana-border);
+    width: 100%;
+    text-align: center;
+    background-color: var(--mana-sand);
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    padding: 16px;
+    box-shadow: inset 5px 5px 0 rgba(0, 0, 0, 0.06);
+}
+
+.shared-data-table > table {
+    border: var(--mana-border);
+    width: 100%;
+    min-width: 720px;
+    background-color: var(--mana-ink);
+    border-spacing: 0;
+}
+
+.shared-data-table-head {
+    padding: 11px 10px;
+    background-color: var(--mana-blue);
+    color: var(--mana-white);
+    font-family: "Sekuya";
+    font-size: 16px;
+}
+
+.shared-data-table-cell {
+    padding: 11px 10px;
+    background-color: var(--mana-white);
+    font-family: "Oswald";
+    font-size: 17px;
+}
+
+.shared-data-table tbody tr:nth-child(even) .shared-data-table-cell {
+    background-color: var(--mana-paper-light);
+}
+
+.shared-data-table--empty {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    min-height: 280px;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(198, 212, 225, 0.32), rgba(255, 255, 255, 0)),
+        var(--mana-sand);
+}
+
+.shared-data-table-empty-state {
+    width: 100%;
+    min-height: 100%;
+    border: 2px dashed var(--mana-ink);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.16)),
+        var(--mana-paper-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 28px;
+    box-shadow: inset 5px 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shared-data-table-empty-label {
+    width: fit-content;
+    border: var(--mana-border-soft);
+    background-color: var(--mana-blue-soft);
+    color: var(--mana-blue-dark);
+    padding: 5px 11px;
+    font-family: "Oswald";
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.shared-data-table-empty-state > h3 {
+    max-width: 580px;
+    margin: 0;
+    color: var(--mana-blue);
+    font-family: "Sekuya";
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1;
+    text-align: center;
+    text-shadow: 2px 3px 0 rgba(68, 116, 157, 0.16);
+}
+
+.shared-data-table-empty-state > p {
+    max-width: 440px;
+    margin: 0;
+    color: var(--mana-ink);
+    font-family: "Oswald";
+    font-size: 18px;
+    line-height: 1.35;
+    text-align: center;
+}
+
+@media (max-width: 760px) {
+    .shared-data-table {
+        padding: 12px;
+    }
+
+    .shared-data-table--empty {
+        min-height: 260px;
+    }
+
+    .shared-data-table-empty-state {
+        padding: 22px 14px;
+    }
+
+    .shared-data-table-empty-state > p {
+        font-size: 16px;
+    }
+}

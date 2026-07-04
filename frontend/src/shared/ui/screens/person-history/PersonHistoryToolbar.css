@@ -1,0 +1,126 @@
+/* source: shared/ui/layouts/person/toolbar/PersonToolbar.css */
+.shared-person-toolbar {
+    border: var(--mana-border);
+    padding: 18px 20px;
+    background-color: var(--mana-sand);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--mana-shadow-sm);
+}
+
+
+/* source: shared/ui/layouts/person/toolbar/filter/PersonHistoryFilter.css */
+.shared-person-history-filter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 260px;
+    height: 42px;
+    padding: 4px;
+    border: var(--mana-border);
+    background-color: var(--mana-white);
+    overflow: hidden;
+}
+
+.shared-person-history-filter > input {
+    display: none;
+}
+
+.shared-person-history-filter-option {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Oswald";
+    font-size: 18px;
+    color: var(--mana-ink);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.shared-person-history-filter-background {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background-color: var(--mana-blue);
+    z-index: 1;
+    transition: transform 0.25s ease;
+}
+
+#shared-person-history-filter-recent:checked + .shared-person-history-filter-option {
+    color: var(--mana-white);
+}
+
+#shared-person-history-filter-oldest:checked + .shared-person-history-filter-option {
+    color: var(--mana-white);
+}
+
+#shared-person-history-filter-recent:checked ~ .shared-person-history-filter-background {
+    transform: translateX(0);
+}
+
+#shared-person-history-filter-oldest:checked ~ .shared-person-history-filter-background {
+    transform: translateX(100%);
+}
+
+/* source: shared/ui/layouts/person/toolbar/window/PersonHistoryWindow.css */
+.shared-person-history-window {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 10px 14px;
+    border: var(--mana-border);
+    background-color: var(--mana-paper-light);
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shared-person-history-window > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border: var(--mana-border);
+    background-color: var(--mana-white);
+}
+
+.shared-person-history-window > button:hover:enabled {
+    cursor: pointer;
+}
+
+.shared-person-history-window > button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.shared-person-history-window > p {
+    min-width: 150px;
+    text-align: center;
+    font-family: "Oswald";
+    font-size: 18px;
+}
+
+@media (max-width: 760px) {
+    .shared-person-toolbar {
+        padding: 12px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .shared-person-history-filter,
+    .shared-person-history-window {
+        width: 100%;
+    }
+
+    .shared-person-history-window > p {
+        flex: 1;
+        min-width: 0;
+    }
+}

@@ -1,0 +1,9 @@
+.base-page-layout {
+    position: relative;
+}
+
+.base-page-layout-header,
+.base-page-layout-toolbar,
+.base-page-layout-content {
+    width: 100%;
+}

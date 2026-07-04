@@ -1,8 +1,0 @@
-.shared-entity-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    border: 2px solid black;
-    padding: 40px;
-    background-color: #ebe7e0;
-}

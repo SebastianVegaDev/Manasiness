@@ -4,6 +4,28 @@
     padding: 0;
 }
 
+:root {
+    --mana-blue: #44749d;
+    --mana-blue-dark: #2f5778;
+    --mana-blue-soft: #c6d4e1;
+    --mana-blue-mid: #759dc0;
+    --mana-paper: #ebe7e0;
+    --mana-paper-light: #f7f4ed;
+    --mana-sand: #dfd3b7;
+    --mana-ink: #111111;
+    --mana-white: #ffffff;
+    --mana-danger: #be5959;
+    --mana-danger-dark: #874040;
+    --mana-border: 2px solid var(--mana-ink);
+    --mana-border-soft: 1px solid rgba(17, 17, 17, 0.55);
+    --mana-radius: 6px;
+    --mana-radius-sm: 4px;
+    --mana-shadow: 7px 7px 0 rgba(17, 17, 17, 0.18);
+    --mana-shadow-sm: 4px 4px 0 rgba(17, 17, 17, 0.16);
+    --mana-shadow-blue: 5px 5px 0 rgba(68, 116, 157, 0.22);
+    --mana-transition: 160ms ease;
+}
+
 html, body, #root {
     width: 100%;
     min-height: 100%;
@@ -12,4 +34,40 @@ html, body, #root {
 body {
     min-height: 100vh;
     margin: 0;
+    color: var(--mana-ink);
+    background-color: var(--mana-ink);
+    font-family: "Oswald", Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--mana-blue);
+    outline-offset: 3px;
+}
+
+::selection {
+    background-color: var(--mana-blue);
+    color: var(--mana-white);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--mana-blue) var(--mana-paper);
 }

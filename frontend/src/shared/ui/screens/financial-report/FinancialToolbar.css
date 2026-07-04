@@ -1,0 +1,114 @@
+/* source: shared/ui/layouts/financial/toolbar/FinancialToolbar.css */
+.shared-financial-toolbar {
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    border: var(--mana-border);
+    gap: 16px;
+    background-color: var(--mana-sand);
+    box-shadow: var(--mana-shadow-sm);
+}
+
+.shared-financial-toolbar-side {
+    display: flex;
+}
+
+.shared-financial-toolbar-side:first-child {
+    justify-content: flex-start;
+}
+
+.shared-financial-toolbar-center {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* source: shared/ui/layouts/financial/toolbar/filter/FinancialToolbarFilter.css */
+.shared-financial-toolbar-filters {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.shared-financial-toolbar-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: var(--mana-border);
+    padding: 8px 10px;
+    background-color: var(--mana-paper-light);
+    font-family: "Oswald";
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shared-financial-toolbar-filter > span {
+    white-space: nowrap;
+}
+
+.shared-financial-toolbar-filter > select {
+    min-width: 130px;
+    border: var(--mana-border-soft);
+    background-color: var(--mana-white);
+    padding: 6px 8px;
+    font-family: inherit;
+}
+
+
+/* source: shared/ui/layouts/financial/toolbar/window/FinancialWindow.css */
+.shared-financial-window {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: var(--mana-border);
+    background-color: var(--mana-paper-light);
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shared-financial-window > p{
+    min-width: 120px;
+    text-align: center;
+}
+
+.shared-financial-window > button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+@media (max-width: 760px) {
+    .shared-financial-toolbar {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        padding: 12px;
+    }
+
+    .shared-financial-toolbar-side,
+    .shared-financial-toolbar-side:first-child,
+    .shared-financial-toolbar-center {
+        justify-content: stretch;
+    }
+
+    .shared-financial-toolbar-filters,
+    .shared-financial-toolbar-filter,
+    .shared-financial-window {
+        width: 100%;
+    }
+
+    .shared-financial-toolbar-filter {
+        justify-content: space-between;
+    }
+
+    .shared-financial-toolbar-filter > select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .shared-financial-window > p {
+        flex: 1;
+        min-width: 0;
+    }
+}

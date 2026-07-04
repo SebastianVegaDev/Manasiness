@@ -1,0 +1,21 @@
+.shared-person-layout {
+    border: var(--mana-border);
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--mana-paper);
+    height: 100%;
+    min-height: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--mana-shadow);
+}
+
+@media (max-width: 760px) {
+    .shared-person-layout {
+        padding: 16px;
+        gap: 18px;
+        box-shadow: 4px 4px 0 rgba(17, 17, 17, 0.14);
+    }
+}

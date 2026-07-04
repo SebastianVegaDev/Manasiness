@@ -1,0 +1,158 @@
+.shared-entity-detail-screen {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: var(--mana-border);
+    padding: 34px;
+    background-color: var(--mana-paper);
+    position: relative;
+    box-shadow: var(--mana-shadow);
+}
+
+.shared-entity-detail-title {
+    text-align: center;
+    padding: 10px;
+    font-family: "Sekuya";
+    color: var(--mana-blue);
+    font-size: 18px;
+    text-shadow: 2px 3px 0 rgba(68, 116, 157, 0.16);
+}
+
+.shared-entity-detail-title > h1 {
+    margin: 0;
+}
+
+.shared-entity-detail-information {
+    border: var(--mana-border);
+    display: flex;
+    min-height: 360px;
+    box-shadow: inset 5px 5px 0 rgba(0, 0, 0, 0.04);
+}
+
+.shared-entity-detail-image {
+    border-right: var(--mana-border);
+    width: min(420px, 40%);
+    background-color: var(--mana-white);
+}
+
+.shared-entity-detail-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    padding: 18px;
+}
+
+.shared-entity-detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    padding: 30px;
+    width: 100%;
+    background-color: var(--mana-sand);
+}
+
+.shared-entity-detail-box {
+    display: flex;
+    padding: 7px;
+    border: var(--mana-border);
+    align-items: center;
+    font-size: 17px;
+    background-color: var(--mana-white);
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+.shared-entity-detail-box > legend {
+    font-family: "Sekuya";
+    color: var(--mana-blue);
+}
+
+.shared-entity-detail-box > p {
+    margin: 0;
+    font-family: "Oswald";
+}
+
+.shared-entity-detail-actions {
+    border: var(--mana-border);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--mana-sand);
+    box-shadow: var(--mana-shadow-sm);
+}
+
+.shared-entity-detail-actions > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 130px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-family: "Sekuya";
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    background-color: #4b4b4b;
+    color: white;
+    border: var(--mana-border);
+    box-shadow: var(--mana-shadow-sm);
+}
+
+.shared-entity-detail-actions > button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.shared-entity-detail-actions > #edit:hover:not(:disabled) {
+    background-color: var(--mana-blue);
+}
+
+.shared-entity-detail-actions > #edit:active:not(:disabled) {
+    transform: scale(0.97);
+    background-color: #304f6b;
+}
+
+.shared-entity-detail-actions > #deactive:hover:not(:disabled) {
+    background-color: #974545;
+}
+
+.shared-entity-detail-actions > #deactive:active:not(:disabled) {
+    transform: scale(0.97);
+    background-color: #743a3a;
+}
+
+@media (max-width: 900px) {
+    .shared-entity-detail-information {
+        flex-direction: column;
+    }
+
+    .shared-entity-detail-image {
+        width: 100%;
+        height: 260px;
+        border-right: 0;
+        border-bottom: var(--mana-border);
+    }
+}
+
+@media (max-width: 760px) {
+    .shared-entity-detail-screen {
+        padding: 16px;
+        gap: 18px;
+        box-shadow: 4px 4px 0 rgba(17, 17, 17, 0.14);
+    }
+
+    .shared-entity-detail-content {
+        padding: 16px;
+        gap: 14px;
+    }
+
+    .shared-entity-detail-actions {
+        flex-direction: column;
+        padding: 14px;
+    }
+
+    .shared-entity-detail-actions > button {
+        width: 100%;
+    }
+}

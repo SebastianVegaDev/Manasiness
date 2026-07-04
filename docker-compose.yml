@@ -1,0 +1,71 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-manasiness}
+      POSTGRES_USER: ${POSTGRES_USER:-manasiness}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-manasiness_password}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - manasiness_db_data:/var/lib/postgresql/data
+      - ./backend/src/database/schema:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    environment:
+      PORT: 3000
+      NODE_ENV: development
+      TRUST_PROXY: "true"
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:8080}
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER:-manasiness}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-manasiness_password}
+      DB_NAME: ${POSTGRES_DB:-manasiness}
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-local-docker}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      RESEND_FROM_EMAIL: ${RESEND_FROM_EMAIL:-Manasiness <onboarding@resend.dev>}
+    ports:
+      - "${BACKEND_PORT:-3000}:3000"
+    depends_on:
+      seed:
+        condition: service_completed_successfully
+
+  seed:
+    build:
+      context: ./backend
+    restart: "no"
+    command: ["node", "dist/database/scripts/runSeed.js"]
+    environment:
+      NODE_ENV: development
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER:-manasiness}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-manasiness_password}
+      DB_NAME: ${POSTGRES_DB:-manasiness}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: /api
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+    depends_on:
+      - backend
+
+volumes:
+  manasiness_db_data:

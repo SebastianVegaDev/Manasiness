@@ -1,0 +1,221 @@
+.pending-layout {
+    background-color: var(--mana-paper);
+    height: 100%;
+    width: 100%;
+    padding: 28px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    box-sizing: border-box;
+    position: relative;
+    border: var(--mana-border);
+    box-shadow: var(--mana-shadow);
+}
+
+.pending-layout-title {
+    flex: 0 0 auto;
+    min-height: 0;
+}
+
+.pending-layout-content {
+    flex: 1;
+    min-height: 0;
+}
+
+.pending-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 0;
+}
+
+.pending-content-sections {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    gap: 18px;
+}
+
+.pending-content-summary {
+    display: flex;
+    gap: 18px;
+}
+
+.pending-content-summary-card {
+    flex: 1;
+    border: var(--mana-border);
+    background-color: var(--mana-paper-light);
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    box-shadow: var(--mana-shadow-sm);
+}
+
+.pending-content-summary-card > h3,
+.pending-content-summary-card > h2,
+.pending-content-summary-card > p {
+    margin: 0;
+}
+
+.pending-content-summary-card > h3 {
+    font-family: "Oswald";
+    color: var(--mana-blue-dark);
+    font-size: 18px;
+}
+
+.pending-content-summary-card > h2 {
+    font-family: "Sekuya";
+    color: var(--mana-blue);
+    font-size: 30px;
+    line-height: 1;
+}
+
+.pending-content-summary-card > p {
+    font-family: "Oswald";
+    font-size: 17px;
+}
+
+.pending-content-section {
+    flex: 1;
+    border: var(--mana-border);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    background-color: var(--mana-white);
+    box-shadow: var(--mana-shadow-sm);
+}
+
+.pending-content-title {
+    font-family: "Sekuya";
+    color: var(--mana-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background-color: var(--mana-sand);
+    border-bottom: var(--mana-border);
+    gap: 12px;
+}
+
+.pending-content-title > h3,
+.pending-content-title > p {
+    margin: 0;
+}
+
+.pending-content-title > h3 {
+    font-size: 20px;
+}
+
+.pending-content-title > p {
+    font-family: "Oswald";
+    font-size: 17px;
+}
+
+.pending-content-users {
+    flex: 1;
+    min-height: 0;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    background-color: var(--mana-paper-light);
+}
+
+.pending-content-empty {
+    height: 100%;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Oswald";
+    font-size: 22px;
+    border: 2px dashed var(--mana-ink);
+    background-color: var(--mana-white);
+}
+
+.pending-content-empty > p {
+    margin: 0;
+}
+
+.pending-content-user {
+    border: var(--mana-border);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background-color: var(--mana-white);
+    box-shadow: 3px 3px 0 rgba(17, 17, 17, 0.1);
+}
+
+.pending-content-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pending-content-user-name,
+.pending-content-user-amount,
+.pending-content-user-time {
+    margin: 0;
+}
+
+.pending-content-user-name {
+    font-family: "Sekuya";
+    font-size: 22px;
+    color: var(--mana-blue);
+}
+
+.pending-content-user-amount {
+    font-family: "Oswald";
+    font-size: 22px;
+}
+
+.pending-content-user-time {
+    font-family: "Oswald";
+    font-size: 17px;
+}
+
+.pending-content-user-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.pending-content-user-actions > button {
+    flex: 1;
+    padding: 10px 14px;
+    border: var(--mana-border);
+    font-family: "Oswald";
+    font-size: 17px;
+    cursor: pointer;
+    transition:
+        background-color var(--mana-transition),
+        transform 0.1s ease;
+}
+
+.pending-content-user-actions > #paid {
+    background-color: var(--mana-blue);
+    color: var(--mana-white);
+}
+
+.pending-content-user-actions > #canceled {
+    background-color: var(--mana-sand);
+    color: var(--mana-ink);
+}
+
+.pending-content-user-actions > button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.pending-content-user-actions > #paid:hover:not(:disabled) {
+    background-color: var(--mana-blue-dark);
+}
+
+.pending-content-user-actions > button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}

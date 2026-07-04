@@ -1,0 +1,58 @@
+/* source: shared/ui/layouts/table/buttons/TableActions.css */
+.shared-table-actions {
+    border: 2px solid black;
+    padding: 25px;
+    background-color: #dfd3b7;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.shared-table-actions > button {
+    padding: 5px;
+}
+
+
+/* source: shared/ui/layouts/person/buttons/PersonActions.css */
+.shared-person-actions {
+    border: 1px solid black;
+    padding: 25px;
+    background-color: #dfd3b7;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.shared-person-actions > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.shared-person-actions > button:hover:enabled {
+    cursor: pointer;
+}
+
+.shared-person-actions > button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.shared-person-actions > p {
+    font-family: "Oswald";
+    font-size: 20px;
+}
+
+@media (max-width: 760px) {
+    .shared-table-actions,
+    .shared-person-actions {
+        padding: 14px;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+}

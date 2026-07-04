@@ -1,0 +1,210 @@
+/* source: shared/ui/layouts/card/toolbar/CardToolbar.css */
+.shared-card-toolbar {
+    width: 100%;
+    border: var(--mana-border);
+    padding: 18px 20px;
+    background-color: var(--mana-sand);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    box-shadow: var(--mana-shadow-sm);
+}
+
+.shared-card-toolbar-main {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.shared-card-toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.shared-card-toolbar-results {
+    border: var(--mana-border);
+    background-color: var(--mana-paper-light);
+    padding: 9px 14px;
+    font-family: "Oswald";
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+
+/* source: shared/ui/layouts/card/toolbar/search/CardSearchInput.css */
+.shared-card-search-form {
+    display: flex;
+}
+
+.shared-card-search-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+}
+
+.shared-card-searchbar {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    background-color: var(--mana-white);
+    border: var(--mana-border);
+    border-radius: var(--mana-radius);
+    padding: 0 14px;
+    gap: 8px;
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.06);
+}
+
+.shared-card-search-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.shared-card-search-input {
+    width: 190px;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-family: "Oswald";
+}
+
+/* source: shared/ui/layouts/card/toolbar/filters/CardToolbarFilters.css */
+.shared-card-toolbar-filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.shared-card-toolbar-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    border: var(--mana-border);
+    padding: 8px 12px;
+    background-color: var(--mana-paper-light);
+    font-family: "Oswald";
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shared-card-toolbar-filter > span {
+    white-space: nowrap;
+}
+
+.shared-card-toolbar-filter > select {
+    min-width: 130px;
+    border: var(--mana-border-soft);
+    background-color: var(--mana-white);
+    padding: 6px 8px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* source: shared/ui/layouts/card/toolbar/buttons/CardButtonCreate.css */
+.shared-card-button > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 9px 16px;
+    cursor: pointer;
+    font-family: "Sekuya";
+    background-color: var(--mana-blue-mid);
+    color: var(--mana-white);
+    border: var(--mana-border);
+    box-shadow: var(--mana-shadow-sm);
+    transition:
+        background-color var(--mana-transition),
+        transform 0.1s ease,
+        box-shadow var(--mana-transition);
+}
+
+.shared-card-button > button:hover {
+    background-color: var(--mana-blue-dark);
+    box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.2);
+}
+
+.shared-card-button > button:active {
+    transform: scale(0.97);
+}
+
+
+.shared-card-button {
+    display: flex;
+}
+.shared-card-button > span {
+    display: inline-flex;
+}
+button.shared-card-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 9px 16px;
+    cursor: pointer;
+    font-family: "Sekuya";
+    background-color: var(--mana-blue-mid);
+    color: var(--mana-white);
+    border: var(--mana-border);
+    box-shadow: var(--mana-shadow-sm);
+    transition:
+        background-color var(--mana-transition),
+        transform 0.1s ease,
+        box-shadow var(--mana-transition);
+}
+button.shared-card-button:hover {
+    background-color: var(--mana-blue-dark);
+    box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.2);
+}
+button.shared-card-button:active { transform: scale(0.97); }
+
+@media (max-width: 760px) {
+    .shared-card-toolbar {
+        padding: 12px;
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .shared-card-toolbar-main,
+    .shared-card-toolbar-actions,
+    .shared-card-search-form,
+    .shared-card-searchbar,
+    .shared-card-toolbar-filters,
+    .shared-card-toolbar-filter,
+    .shared-card-button,
+    .shared-card-button > button,
+    button.shared-card-button {
+        width: 100%;
+    }
+
+    .shared-card-search-input {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+    }
+
+    .shared-card-toolbar-filter {
+        justify-content: space-between;
+    }
+
+    .shared-card-toolbar-filter > select {
+        flex: 1;
+        min-width: 0;
+    }
+}

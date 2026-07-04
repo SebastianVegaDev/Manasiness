@@ -1,16 +1,22 @@
 .dashboard-sidebar {
     display: flex;
     flex-direction: column;
-    background-color: #44749d;
+    width: 380px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.02)),
+        var(--mana-blue);
     height: 100vh;
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
     box-sizing: border-box;
+    border-right: var(--mana-border);
+    box-shadow: 10px 0 0 rgba(0, 0, 0, 0.2);
 }
 
 .dashboard-sidebar-brand-wrapper {
-    padding: 30px 50px;
+    padding: 30px 42px 28px;
+    border-bottom: var(--mana-border);
 }
 
 .dashboard-sidebar-brand {
@@ -25,19 +31,21 @@
     max-width: 280px;
     height: auto;
     display: block;
+    filter: drop-shadow(3px 5px 0 rgba(0, 0, 0, 0.16));
 }
 
 .dashboard-sidebar-list {
     height: 100%;
     display: flex;
     flex-direction: column;
+    padding-top: 0;
 }
 
 .dashboard-sidebar-logout {
     margin-top: auto;
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 32px;
     gap: 20px;
 }
 
@@ -70,29 +78,49 @@
 
 .dashboard-sidebar-section > button {
     width: 100%;
-    height: 70px;
+    min-height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #c6d4e1;
-    border: 0.5px solid black;
-    padding: 0px 16px;
+    background-color: var(--mana-blue-soft);
+    border: 0;
+    border-bottom: var(--mana-border);
+    padding: 0 18px;
     box-sizing: border-box;
     font-family: "Sekuya";
-    color: black;
+    color: var(--mana-ink);
     font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        background-color var(--mana-transition),
+        color var(--mana-transition),
+        padding-left var(--mana-transition);
 }
 
-.dashboard-sidebar-section > button:hover {
-    background-color: rgba(198, 212, 225, 0.8);
-    cursor: pointer;
+.dashboard-sidebar-section > button:hover,
+.dashboard-sidebar-section > button[aria-expanded="true"] {
+    background-color: var(--mana-sand);
+    color: var(--mana-blue-dark);
+    padding-left: 24px;
+}
+
+.dashboard-sidebar-section > button svg {
+    width: 24px;
+    height: 24px;
+    transition: transform var(--mana-transition);
+}
+
+.dashboard-sidebar-section > button[aria-expanded="true"] svg {
+    transform: rotate(90deg);
 }
 
 .dashboard-sidebar-section ul {
     display: flex;
     flex-direction: column;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
+    border-bottom: var(--mana-border);
+    background-color: rgba(17, 17, 17, 0.16);
+    padding: 8px 0;
 }
 
 .dashboard-sidebar-section ul[hidden] {
@@ -100,26 +128,40 @@
 }
 
 .dashboard-sidebar-section li {
-    background: #afc3d4;
+    background: transparent;
     list-style: none;
 }
 
 .dashboard-sidebar-section li a {
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 10px;
     width: 100%;
-    padding: 8px 14px;
+    padding: 10px 18px 10px 28px;
     text-decoration: none;
-    color: inherit;
+    color: var(--mana-white);
     box-sizing: border-box;
     font-family: "Oswald";
-    font-size: 20px;
+    font-size: 19px;
+    border-left: 6px solid transparent;
+    transition:
+        background-color var(--mana-transition),
+        border-color var(--mana-transition),
+        color var(--mana-transition),
+        transform var(--mana-transition);
 }
 
-.dashboard-sidebar-section li:hover {
-    background-color: rgba(175, 195, 212, 0.8);
-    cursor: pointer;
+.dashboard-sidebar-section li a svg {
+    width: 20px;
+    height: 20px;
+}
+
+.dashboard-sidebar-section li a:hover,
+.dashboard-sidebar-section li a.active {
+    background-color: var(--mana-paper);
+    border-left-color: var(--mana-sand);
+    color: var(--mana-ink);
+    transform: translateX(4px);
 }
 
 .dashboard-sidebar-logout-button {
@@ -127,19 +169,144 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
+    width: 160px;
+    min-height: 50px;
     padding: 14px 22px;
     cursor: pointer;
     font-family: "Sekuya";
-    color: white;
-    background-color: #be5959;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    color: var(--mana-white);
+    background-color: var(--mana-danger);
+    border: var(--mana-border);
+    box-shadow: var(--mana-shadow-sm);
+    transition:
+        background-color var(--mana-transition),
+        transform 0.1s ease,
+        box-shadow var(--mana-transition);
 }
 
 .dashboard-sidebar-logout-button:hover {
-    background-color: #994747;
+    background-color: var(--mana-danger-dark);
+    box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.2);
 }
 
 .dashboard-sidebar-logout-button:active {
     background-color: #773838;
     transform: scale(0.97);
+}
+
+@media (max-width: 1100px) {
+    .dashboard-sidebar {
+        width: 100%;
+        height: auto;
+        max-height: 52vh;
+        border-right: 0;
+        border-bottom: var(--mana-border);
+        box-shadow: 0 8px 0 rgba(0, 0, 0, 0.18);
+    }
+
+    .dashboard-sidebar-brand-wrapper {
+        padding: 14px 18px;
+    }
+
+    .dashboard-sidebar-brand {
+        justify-content: flex-start;
+    }
+
+    .dashboard-sidebar-brand > img {
+        max-width: 210px;
+    }
+
+    .dashboard-sidebar-list {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(132px, 1fr));
+        align-items: start;
+        height: auto;
+    }
+
+    .dashboard-sidebar-section > button {
+        min-height: 56px;
+        padding: 0 12px;
+        font-size: 17px;
+    }
+
+    .dashboard-sidebar-section > button:hover,
+    .dashboard-sidebar-section > button[aria-expanded="true"] {
+        padding-left: 16px;
+    }
+
+    .dashboard-sidebar-section li a {
+        padding: 9px 12px;
+        font-size: 17px;
+    }
+
+    .dashboard-sidebar-logout {
+        grid-column: 1 / -1;
+        padding: 14px 18px;
+        margin-top: 0;
+        border-top: var(--mana-border);
+        background-color: rgba(17, 17, 17, 0.12);
+    }
+
+    .dashboard-sidebar-logout-button {
+        width: 100%;
+        max-width: 220px;
+        min-height: 46px;
+    }
+}
+
+@media (max-width: 760px) {
+    .dashboard-sidebar {
+        max-height: 58vh;
+    }
+
+    .dashboard-sidebar-brand-wrapper {
+        padding: 12px 14px;
+    }
+
+    .dashboard-sidebar-brand {
+        justify-content: center;
+    }
+
+    .dashboard-sidebar-brand > img {
+        max-width: 185px;
+    }
+
+    .dashboard-sidebar-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-sidebar-section > button {
+        min-height: 52px;
+        font-size: 15px;
+    }
+
+    .dashboard-sidebar-section > button svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .dashboard-sidebar-section ul {
+        padding: 6px 0;
+    }
+
+    .dashboard-sidebar-section li a {
+        gap: 7px;
+        padding: 9px 10px;
+        font-size: 16px;
+        border-left-width: 4px;
+    }
+
+    .dashboard-sidebar-section li a svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dashboard-sidebar-logout {
+        padding: 12px 14px;
+    }
+
+    .dashboard-sidebar-logout-button {
+        max-width: none;
+        min-height: 44px;
+    }
 }

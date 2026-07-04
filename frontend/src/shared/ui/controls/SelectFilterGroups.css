@@ -1,0 +1,167 @@
+/* source: shared/ui/layouts/card/toolbar/filters/CardToolbarFilters.css */
+.shared-card-toolbar-filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.shared-card-toolbar-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: var(--mana-border);
+    min-height: 44px;
+    padding: 8px 12px;
+    background-color: var(--mana-paper-light);
+    font-family: "Oswald";
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shared-card-toolbar-filter > span {
+    white-space: nowrap;
+}
+
+.shared-card-toolbar-filter > select {
+    min-width: 130px;
+    border: var(--mana-border-soft);
+    background-color: var(--mana-white);
+    padding: 6px 8px;
+    font-family: inherit;
+}
+
+
+/* source: shared/ui/layouts/table/toolbar/filter/TableFilter.css */
+.shared-table-filter {
+    border: var(--mana-border);
+    padding: 10px;
+    background-color: var(--mana-paper-light);
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shared-table-filter > legend {
+    padding: 0 6px;
+    margin: 0 auto;
+    font-family: "Sekuya";
+    color: var(--mana-blue);
+}
+
+.shared-table-filter-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 260px;
+    height: 42px;
+    padding: 4px;
+    border: var(--mana-border);
+    background-color: var(--mana-white);
+    overflow: hidden;
+}
+
+.shared-table-filter-switch > input {
+    display: none;
+}
+
+.shared-table-filter-option {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Oswald";
+    font-size: 18px;
+    color: var(--mana-ink);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.shared-table-filter-background {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background-color: var(--mana-blue);
+    z-index: 1;
+    transition: transform 0.25s ease;
+}
+
+#shared-table-filter-recent:checked + .shared-table-filter-option {
+    color: var(--mana-white);
+}
+
+#shared-table-filter-oldest:checked + .shared-table-filter-option {
+    color: var(--mana-white);
+}
+
+#shared-table-filter-recent:checked ~ .shared-table-filter-background {
+    transform: translateX(0);
+}
+
+#shared-table-filter-oldest:checked ~ .shared-table-filter-background {
+    transform: translateX(100%);
+}
+
+/* source: shared/ui/layouts/financial/toolbar/filter/FinancialToolbarFilter.css */
+.shared-financial-toolbar-filters {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.shared-financial-toolbar-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: var(--mana-border);
+    min-height: 44px;
+    padding: 8px 12px;
+    background-color: var(--mana-paper-light);
+    font-family: "Oswald";
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shared-financial-toolbar-filter > span {
+    white-space: nowrap;
+}
+
+.shared-financial-toolbar-filter > select {
+    min-width: 130px;
+    border: var(--mana-border-soft);
+    background-color: var(--mana-white);
+    padding: 6px 8px;
+    font-family: inherit;
+}
+
+
+/* source: features/activity/layout/content/toolbar/filter/ActivityToolbarFilter.css */
+.activity-toolbar-filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.activity-toolbar-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: var(--mana-border);
+    min-height: 44px;
+    padding: 8px 12px;
+    background-color: var(--mana-paper-light);
+    font-family: "Oswald";
+    box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.activity-toolbar-filter > span {
+    white-space: nowrap;
+}
+
+.activity-toolbar-filter > select {
+    min-width: 130px;
+    border: var(--mana-border-soft);
+    background-color: var(--mana-white);
+    padding: 6px 8px;
+    font-family: inherit;
+}

@@ -19,3 +19,14 @@
 .shared-drawer-banner-slot {
     margin-top: auto;
 }
+
+@media (max-width: 760px) {
+    .shared-drawer-panel-overlay {
+        justify-content: center;
+    }
+
+    .shared-drawer-panel-content {
+        max-width: none;
+        border-left: 0;
+    }
+}
