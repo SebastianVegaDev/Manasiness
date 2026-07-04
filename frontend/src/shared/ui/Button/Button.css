@@ -1,0 +1,23 @@
+.button {
+    border: 1px solid #cccccc;
+    padding: 8px 12px;
+    background: none;
+    cursor: pointer;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.button--primary {
+    font-weight: 600;
+}
+
+.button--secondary {
+    font-weight: 400;
+}
+
+.button--danger {
+    font-weight: 600;
+}

@@ -1,0 +1,12 @@
+.empty-state {
+	border: 1px solid #ccc;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.empty-state h2,
+.empty-state p {
+	margin: 0;
+}

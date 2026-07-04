@@ -1,0 +1,13 @@
+.card {
+	border: 1px solid #ccc;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.card h1,
+.card h2,
+.card p {
+	margin: 0;
+}

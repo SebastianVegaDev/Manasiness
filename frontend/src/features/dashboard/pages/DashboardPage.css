@@ -1,0 +1,16 @@
+.dashboard-page {
+	width: 100%;
+	max-width: 900px;
+}
+
+.dashboard-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.dashboard-link {
+	border: 1px solid #ccc;
+	padding: 8px 12px;
+	text-decoration: none;
+}

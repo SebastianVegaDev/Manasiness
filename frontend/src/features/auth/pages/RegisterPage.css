@@ -1,0 +1,54 @@
+.register-page {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 24px;
+}
+
+.register-card {
+	width: 100%;
+	max-width: 420px;
+	border: 1px solid #ccc;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.register-card h1,
+.register-card p {
+	margin: 0;
+}
+
+.register-form {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.register-form label {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.register-form input {
+	padding: 8px;
+	border: 1px solid #ccc;
+}
+
+.register-form button {
+	padding: 8px 12px;
+	border: 1px solid #ccc;
+	background: none;
+	cursor: pointer;
+}
+
+.register-error {
+	font-weight: 600;
+}
+
+.register-footer a {
+	text-decoration: underline;
+}

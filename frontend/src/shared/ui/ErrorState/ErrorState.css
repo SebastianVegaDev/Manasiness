@@ -1,0 +1,9 @@
+.error-state {
+	border: 1px solid #ccc;
+	padding: 12px;
+	font-weight: 600;
+}
+
+.error-state p {
+	margin: 0;
+}

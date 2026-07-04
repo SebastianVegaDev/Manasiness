@@ -1,0 +1,36 @@
+.challenge-card {
+	border: 1px solid #cccccc;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.challenge-card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.challenge-card h2,
+.challenge-card p {
+	margin: 0;
+}
+
+.challenge-card-slug {
+	color: #666666;
+}
+
+.challenge-card-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.challenge-card-link {
+	border: 1px solid #ccc;
+	padding: 8px 12px;
+	text-decoration: none;
+	width: fit-content;
+}

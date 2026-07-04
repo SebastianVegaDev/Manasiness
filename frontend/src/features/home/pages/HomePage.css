@@ -1,264 +1,37 @@
-.home {
-    background-color: #ebe7e0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    gap: 22px;
-    border: 2px solid black;
-    box-sizing: border-box;
-    overflow: hidden;
+.home-page {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 24px;
 }
 
-.home-hero {
-    flex: 1;
-    display: flex;
-    gap: 22px;
-    min-height: 0;
+.home-card {
+	width: 100%;
+	max-width: 700px;
+	border: 1px solid #ccc;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
 }
 
-.home-hero-left,
-.home-hero-right,
-.home-mission {
-    border: 2px solid black;
-    background-color: #dfd3b7;
+.home-card h1,
+.home-card p {
+	margin: 0;
 }
 
-.home-hero-left {
-    flex: 0.95;
-    padding: 36px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
+.home-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
 }
 
-.home-hero-welcome {
-    margin: 0;
-    color: #44749d;
-    font-family: "Oswald";
-    font-size: 21px;
-    font-weight: 600;
-}
-
-.home-hero-label {
-    width: fit-content;
-    margin: 0;
-    padding: 8px 14px;
-    border: 1px solid black;
-    background-color: #c6d4e1;
-    color: black;
-    font-family: "Oswald";
-    font-size: 16px;
-    letter-spacing: 1px;
-}
-
-.home-hero-title {
-    margin: 0;
-    color: #44749d;
-    font-family: "Sekuya";
-    font-size: 56px;
-    line-height: 0.98;
-}
-
-.home-hero-description {
-    margin: 0;
-    color: black;
-    font-family: "Oswald";
-    font-size: 21px;
-    line-height: 1.45;
-    max-width: 540px;
-}
-
-.home-hero-button {
-    width: fit-content;
-    margin-top: 8px;
-    padding: 14px 30px;
-    border: 2px solid black;
-    background-color: #759dc0;
-    color: white;
-    text-decoration: none;
-    font-family: "Oswald";
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.home-hero-button:hover {
-    background-color: #335a7b;
-}
-
-.home-hero-right {
-    flex: 1.05;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    min-height: 0;
-}
-
-.home-steps-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 20px;
-    padding-bottom: 14px;
-    border-bottom: 2px solid black;
-}
-
-.home-steps-label {
-    margin: 0;
-    color: black;
-    font-family: "Oswald";
-    font-size: 16px;
-    letter-spacing: 1px;
-}
-
-.home-steps-title {
-    margin: 0;
-    color: #44749d;
-    font-family: "Sekuya";
-    font-size: 34px;
-    line-height: 1;
-    text-align: right;
-}
-
-.home-steps-showcase {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    min-height: 0;
-}
-
-.home-step-card {
-    flex: 1;
-    min-height: 0;
-    border: 2px solid black;
-    background-color: #ebe7e0;
-    display: grid;
-    grid-template-columns: 155px 1fr;
-}
-
-.home-step-card:nth-child(1),
-.home-step-card:nth-child(2),
-.home-step-card:nth-child(3) {
-    height: auto;
-    opacity: 1;
-}
-
-.home-step-card-top {
-    padding: 18px;
-    border-right: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-}
-
-.home-step-number {
-    margin: 0;
-    color: #44749d;
-    font-family: "Sekuya";
-    font-size: 42px;
-    line-height: 1;
-}
-
-.home-step-title {
-    margin: 0;
-    color: #44749d;
-    font-family: "Oswald";
-    font-size: 27px;
-    font-weight: 700;
-}
-
-.home-step-card-bottom {
-    min-width: 0;
-    padding: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-}
-
-.home-step-description {
-    margin: 0;
-    color: black;
-    font-family: "Oswald";
-    font-size: 18px;
-    line-height: 1.35;
-}
-
-.home-step-link {
-    flex-shrink: 0;
-    width: 150px;
-    padding: 11px 16px;
-    border: 2px solid black;
-    background-color: #759dc0;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-family: "Oswald";
-    font-size: 16px;
-    font-weight: 600;
-    box-sizing: border-box;
-}
-
-.home-step-link:hover {
-    background-color: #b2c4d3;
-}
-
-.home-mission {
-    flex: 0.36;
-    display: flex;
-    gap: 24px;
-    padding: 24px;
-    min-height: 0;
-}
-
-.home-mission-left {
-    width: 34%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    padding-right: 24px;
-    border-right: 2px solid black;
-    box-sizing: border-box;
-}
-
-.home-mission-label {
-    width: fit-content;
-    margin: 0;
-    padding: 7px 13px;
-    border: 1px solid black;
-    background-color: #c6d4e1;
-    color: black;
-    font-family: "Oswald";
-    font-size: 15px;
-    letter-spacing: 1px;
-}
-
-.home-mission-title {
-    margin: 0;
-    color: #44749d;
-    font-family: "Sekuya";
-    font-size: 33px;
-    line-height: 1.05;
-}
-
-.home-mission-right {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-    align-items: center;
-}
-
-.home-mission-right > p {
-    margin: 0;
-    color: black;
-    font-family: "Oswald";
-    font-size: 19px;
-    line-height: 1.45;
+.home-link,
+.home-actions button {
+	border: 1px solid #ccc;
+	padding: 8px 12px;
+	background: none;
+	text-decoration: none;
+	cursor: pointer;
 }

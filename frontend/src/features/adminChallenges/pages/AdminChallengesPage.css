@@ -1,0 +1,60 @@
+.admin-challenges-page {
+	width: 100%;
+	max-width: 1000px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.admin-page-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.admin-page-header h1,
+.admin-page-header p,
+.admin-challenge-item h2,
+.admin-challenge-item p {
+	margin: 0;
+}
+
+.admin-row-actions,
+.admin-meta-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.admin-list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.admin-challenge-item {
+	border: 1px solid #cccccc;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.admin-item-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.admin-muted {
+	color: #666666;
+}
+
+.admin-link {
+	border: 1px solid #cccccc;
+	padding: 8px 12px;
+	text-decoration: none;
+	width: fit-content;
+}

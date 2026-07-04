@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: devjudge_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Zhub2104
+      POSTGRES_DB: devjudge
+    ports:
+      - "5433:5432"
+    volumes:
+      - devjudge_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  devjudge_postgres_data:

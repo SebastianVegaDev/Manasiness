@@ -1,0 +1,36 @@
+.challenges-page {
+	width: 100%;
+	max-width: 1000px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.challenges-header h1,
+.challenges-header p {
+	margin: 0;
+}
+
+.challenges-filters {
+	border: 1px solid #cccccc;
+	padding: 16px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.challenges-filters input,
+.challenges-filters select {
+	padding: 8px;
+	border: 1px solid #cccccc;
+}
+
+.challenges-list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.challenges-muted {
+	color: #666666;
+}
