@@ -1,8 +1,27 @@
 # Manasiness Docs
 
-This folder explains how Manasiness is organized.
+This folder contains the long-form documentation for Manasiness.
 
-Read in this order:
+The root `README.md` is the project presentation. Detailed technical explanations live here.
+
+## Documents
+
+```txt
+ARCHITECTURE.md   Overall mental model and module boundaries
+BACKEND.md        Backend request flow, modules, auth, services, repositories
+FRONTEND.md       Frontend folders, routing, cache, UI rules
+DATABASE.md       PostgreSQL schema, seed data, triggers, stock rules
+BOOTSTRAP.md      Dashboard bootstrap loading and frontend cache behavior
+DOCKER.md         Docker Compose workflow and services
+DEVELOPMENT.md    Local development commands and manual workflows
+SECURITY.md       Current security model and sensitive routes
+QA_CHECKLIST.md   Manual validation checklist
+screenshots/      Real application screenshots used by the root README
+```
+
+## Reading order
+
+For a new developer:
 
 ```txt
 1. ARCHITECTURE.md
@@ -11,8 +30,14 @@ Read in this order:
 4. DATABASE.md
 5. BOOTSTRAP.md
 6. DEVELOPMENT.md
-7. QA_CHECKLIST.md
-8. DECISIONS.md
+```
+
+For running the project:
+
+```txt
+1. DOCKER.md
+2. DEVELOPMENT.md
+3. QA_CHECKLIST.md
 ```
 
 ## Main idea
