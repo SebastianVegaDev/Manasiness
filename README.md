@@ -153,8 +153,8 @@ npm run install:all
 Start PostgreSQL, create the backend `.env`, then run schema and seed:
 
 ```bash
-npm --prefix backend run db:schema
-npm --prefix backend run db:seed
+npm run db:schema
+npm run db:seed
 ```
 
 Run the apps:
@@ -175,11 +175,7 @@ http://localhost:5173
 ## Validation
 
 ```bash
-npm --prefix backend run typecheck
-npm --prefix backend run build
-npm --prefix frontend run typecheck
-npm --prefix frontend run lint
-npm --prefix frontend run build
+npm run validate
 ```
 
 ## Documentation
@@ -192,6 +188,7 @@ npm --prefix frontend run build
 | [`docs/BACKEND.md`](docs/BACKEND.md) | Backend modules, request flow, auth, and layering |
 | [`docs/DATABASE.md`](docs/DATABASE.md) | PostgreSQL schema and data model |
 | [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md) | Dashboard bootstrap loading and cache |
+| [`docs/DOCKER.md`](docs/DOCKER.md) | Docker Compose workflow and services |
 | [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md) | Local workflow and seed account |
 | [`docs/SECURITY.md`](docs/SECURITY.md) | Security model and sensitive routes |
 | [`docs/QA_CHECKLIST.md`](docs/QA_CHECKLIST.md) | Manual validation checklist |
@@ -211,7 +208,7 @@ frontend/
   src/shared/       API client, storage, hooks, UI primitives, types
 
 docs/
-  architecture, backend, frontend, database, security, and QA notes
+  architecture, backend, frontend, database, Docker, security, and QA notes
 ```
 
 ---

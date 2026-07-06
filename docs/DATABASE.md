@@ -58,14 +58,12 @@ This avoids hardcoding a fake or manually copied password hash in SQL.
 Run schema:
 
 ```bash
-cd backend
 npm run db:schema
 ```
 
 Run seed:
 
 ```bash
-cd backend
 npm run db:seed
 ```
 

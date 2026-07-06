@@ -8,54 +8,40 @@ npm
 PostgreSQL
 ```
 
-## Backend setup
+## Install dependencies
+
+From the project root:
 
 ```bash
-cd backend
-npm install
+npm run install:all
 ```
 
-Create env:
+Equivalent split commands:
 
 ```bash
-cp .env.example .env
+npm run install:backend
+npm run install:frontend
+```
+
+## Environment files
+
+Backend local env:
+
+```bash
+cp backend/.env.example backend/.env
+```
+
+Frontend local env:
+
+```bash
+cp frontend/.env.example frontend/.env
 ```
 
 On Windows PowerShell:
 
 ```powershell
-Copy-Item .env.example .env
-```
-
-Run backend:
-
-```bash
-npm run dev
-```
-
-## Frontend setup
-
-```bash
-cd frontend
-npm install
-```
-
-Create env:
-
-```bash
-cp .env.example .env
-```
-
-On Windows PowerShell:
-
-```powershell
-Copy-Item .env.example .env
-```
-
-Run frontend:
-
-```bash
-npm run dev
+Copy-Item .\backend\.env.example .\backend\.env
+Copy-Item .\frontend\.env.example .\frontend\.env
 ```
 
 ## Database setup
@@ -63,7 +49,6 @@ npm run dev
 Run schema on an empty database:
 
 ```bash
-cd backend
 npm run db:schema
 ```
 
@@ -78,6 +63,43 @@ Demo account:
 ```txt
 Email: demo@manasiness.dev
 Password: 123456
+```
+
+## Run locally
+
+Start the backend:
+
+```bash
+npm run dev:backend
+```
+
+Start the frontend in another terminal:
+
+```bash
+npm run dev:frontend
+```
+
+Default frontend URL:
+
+```txt
+http://localhost:5173
+```
+
+## Validation
+
+Before merging a branch, run:
+
+```bash
+npm run validate
+```
+
+The expanded validation is:
+
+```bash
+npm run typecheck
+npm run build:backend
+npm run lint:frontend
+npm run build:frontend
 ```
 
 ## Normal development flow
@@ -118,16 +140,5 @@ Examples:
 ```txt
 refactor(backend): add bootstrap module
 refactor(frontend): extract app routing foundation
-refactor(database): add schema and seed runners
-docs: add project documentation
+docs: document Docker workflow
 ```
-
-## Refactor rule
-
-Do not change business behavior unless the tramo explicitly says so.
-
-Separate responsibilities first.
-
-Then improve architecture.
-
-Then migrate to TypeScript strictly.
